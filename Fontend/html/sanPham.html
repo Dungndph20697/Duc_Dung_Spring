@@ -1,0 +1,65 @@
+<div class="container backgroud">
+  <div>
+    <nav class="nav-center">
+      <div class="nav nav-tabs nav-center" id="nav-tab" role="tablist">
+        <button
+          class="nav-link"
+          id="nav-profile-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-profile"
+          type="button"
+          role="tab"
+          aria-controls="nav-profile"
+          aria-selected="false"
+          ng-repeat="dsp in lstDongSP"
+          ng-click="showProductWhitCategory(c.ten)"
+        >
+          {{dsp.ten}}
+        </button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="nav-home"
+        role="tabpanel"
+        aria-labelledby="nav-home-tab"
+        tabindex="0"
+      ></div>
+      <div
+        class="tab-pane fade"
+        id="nav-profile"
+        role="tabpanel"
+        aria-labelledby="nav-profile-tab"
+        tabindex="0"
+      ></div>
+      <div
+        class="tab-pane fade"
+        id="nav-contact"
+        role="tabpanel"
+        aria-labelledby="nav-contact-tab"
+        tabindex="0"
+      ></div>
+      <div
+        class="tab-pane fade"
+        id="nav-disabled"
+        role="tabpanel"
+        aria-labelledby="nav-disabled-tab"
+        tabindex="0"
+      ></div>
+    </div>
+  </div>
+  <div class="container backgroud">
+    <div class="row">
+      <div class="col-6 col-md-3" ng-repeat="sp in lstCTSP">
+        <div class="product">
+          <img src="{{sp.anh}}" alt="" class="img-pro" />
+          <h3 class="name-pro">
+            <a href="#detail/{{sp.id}}">{{sp.sanPham.ten}}</a>
+          </h3>
+          <p class="price-pro">{{sp.giaBan}}đ <span>{{sp.giaGoc}}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

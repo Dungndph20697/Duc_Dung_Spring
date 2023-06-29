@@ -1,0 +1,105 @@
+<div class="container backgroud">
+  <nav ng-include="'../../page/menu-quan-tri-sp.html'"></nav>
+  <h1 class="quanTriSP">Quản trị hoá đơn chi tiết</h1>
+  <div class="row">
+    <div class="col-md-6 form_Trai">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Mã hoá đơn:</label
+        >
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          ng-model="hoaDon"
+        >
+          <option ng-repeat="hd in lstHD" value="{{hd.id}}">{{hd.ma}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Sản phẩm:</label
+        >
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          ng-model="sanPham"
+        >
+          <option ng-repeat="ctsp in lstCTSP" value="{{ctsp.id}}">
+            {{ctsp.sanPham.ten}}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Số lượng:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="soLuong"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Đơn giá:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="donGia"
+        />
+      </div>
+      <div class="them-sua-xoa">
+        <button
+          type="button"
+          class="btn btn-danger btn-them-sua-xoa them-trai"
+          ng-click="addNew()"
+        >
+          thêm
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-them-sua-xoa"
+          ng-click="update()"
+        >
+          Sửa
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6 form_Phai">
+      <table class="table">
+        <tr>
+          <td>Mã hoá đơn</td>
+          <td>Sản phẩm</td>
+          <td>Số lượng</td>
+          <td>Đơn giá</td>
+          <td>Action</td>
+        </tr>
+        <tr ng-repeat="hdct in lstHDCT">
+          <td>{{hdct.hoaDon.ma}}</td>
+          <td>{{hdct.chiTietSP.sanPham.ten}}</td>
+          <td>{{hdct.soLuong}}</td>
+          <td>{{hdct.donGia}}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="detail(hdct.id)"
+            >
+              Detail
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="remove(hdct.id)"
+            >
+              xoá
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+<div class="container backgroud">
+  <nav ng-include="'../../page/menu-quan-tri-sp.html'"></nav>
+  <h1 class="quanTriSP">Quản trị cửa hàng</h1>
+  <div class="row">
+    <div class="col-md-6 form_Trai">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Mã cửa hàng:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="maCH"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Tên cửa hàng:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="tenCH"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Địa chỉ:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="diaChi"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Thành phố:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="thanhPho"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Quốc gia:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="quocGia"
+        />
+      </div>
+      <div class="them-sua-xoa">
+        <button
+          type="button"
+          class="btn btn-danger btn-them-sua-xoa them-trai"
+          ng-click="addNew()"
+        >
+          thêm
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-them-sua-xoa"
+          ng-click="update()"
+        >
+          Sửa
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6 form_Phai">
+      <table class="table">
+        <tr>
+          <td>Mã</td>
+          <td>Tên</td>
+          <td>Địa chỉ</td>
+          <td>Thành phố</td>
+          <td>Quốc gia</td>
+          <td>Action</td>
+        </tr>
+        <tr ng-repeat="ch in lstCH">
+          <td>{{ch.ma}}</td>
+          <td>{{ch.ten}}</td>
+          <td>{{ch.diaChi}}</td>
+          <td>{{ch.thanhPho}}</td>
+          <td>{{ch.quocGia}}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="detail(ch.id)"
+            >
+              Detail
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="remove(ch.id)"
+            >
+              xoá
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-3" ng-repeat="sp in lstProduct">
+        <div class="product">
+          <img src="{{sp.img}}" alt="" class="img-pro" />
+          <h3 class="name-pro">
+            <a href="" ng-click="details(sp.id)">{{sp.ten}}</a>
+          </h3>
+          <p class="price-pro">{{sp.giaBan}}đ <span>{{sp.giaGoc}}đ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

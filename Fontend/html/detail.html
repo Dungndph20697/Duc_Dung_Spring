@@ -1,0 +1,106 @@
+<section>
+  <div class="container backgroud">
+    <h3 class="tenSP">{{productDetail.sanPham.ten}}</h3>
+    <div class="row">
+      <div class="col-10 col-md-6 image-sp">
+        <img src="{{productDetail.anh}}" alt="" class="" />
+        <p class="thongtin-sp">
+          Màn hình: 6.7 inch, OLED, Super Retina XDR, 2778 x 1284 Pixels
+        </p>
+        <p class="thongtin-sp">Camera sau: 12.0 MP + 12.0 MP + 12.0 MP</p>
+        <p class="thongtin-sp">Camera Selfie: 12.0 MP</p>
+        <p class="thongtin-sp">CPU: A15 Bionic</p>
+        <p class="thongtin-sp">Bộ nhớ trong: 128GB</p>
+        <p class="thongtin-sp">
+          <a href="">Xem chi tiết thông số kĩ thuật</a>
+        </p>
+      </div>
+      <div class="col-10 col-md-6">
+        <p class="right-gia">
+          {{productDetail.giaBan}}₫<span>{{productDetail.giaGoc}}</span>
+        </p>
+        <p class="right-tragop">
+          Trả góp chỉ từ<br /><span>2.220.500đ</span>/tháng
+        </p>
+        <p class="right-quatang">
+          <li>Bảo hành 2 năm chính hãng</li>
+          <li>Tặng PMH 300.000đ mua Ốp lưng chính hãng</li>
+          <li>Tặng PMH 200.000đ mua Sạc Magsafe</li>
+          <li>Tặng PMH 165.000đ mua eSim Mobifone Big Data</li>
+        </p>
+        <!-- <button type="button" class="btn btn-primary btn-lg">
+              MUA NGAY
+            </button>
+            <button type="button" class="btn btn-secondary btn-lg">
+              THÊM VÀO GIỎ HÀNG
+            </button> -->
+        <div class="row">
+          <div class="col-6">
+            <button type="button" class="btn btn-primary btn-lg">
+              MUA NGAY
+            </button>
+          </div>
+          <div class="col-6">
+            <button
+              type="button"
+              class="btn btn-secondary btn-lg"
+              ng-click="addGioHang()"
+            >
+              THÊM VÀO GIỎ HÀNG
+            </button>
+            <!-- Button trigger modal -->
+            <!-- Button trigger modal -->
+            
+          </div>
+        </div>
+        <p class="right-goiYsp">gợi ý sản phẩm mua kèm:</p>
+        <div class="goiy1">
+          <img
+            src="../images/637703258653853689_tai-nghe-airpods-pro-2021-dd.png"
+            alt=""
+          />
+          <p class="goiy1a"><a href="">Tai nghe AriPods Pro 2021</a></p>
+          <p class="goiy1a">4.899.000đ <span>5.999.000đ</span></p>
+        </div>
+        <div class="goiy2">
+          <img
+            src="../images/637680282954481644_op-lung-iphone-13-pro-silicone-case-with-magsafe-dd.png"
+            alt=""
+          />
+          <p class="goiy2a"><a href="">Opps lưng iPhone 13 Pro Max</a></p>
+          <p class="goiy2b">1.590.000đ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container backgroud">
+    <h4 class="tenSP_danhGiaChiTiet">
+      Đánh giá chi tiết {{productDetail.ten}}
+    </h4>
+    <p class="font-thongtinchitiet">
+      iPhone 13 Pro Max xứng đáng là một chiếc iPhone lớn nhất, mạnh mẽ nhất và
+      có thời lượng pin dài nhất từ trước đến nay sẽ cho bạn trải nghiệm tuyệt
+      vời, từ những tác vụ bình thường cho đến các ứng dụng chuyên nghiệp.
+    </p>
+    <div class="thongtinchitiet-img">
+      <img src="{{productDetail.img}}" alt="" />
+    </div>
+    <p class="font-thongtinchitiet">
+      Đắm chìm trong không gian màn hình lớn cực đã
+    </p>
+    <p class="thongtinchitiet">
+      Dù là giải trí khi xem phim, chơi game hay kiểm tra email, đọc tài liệu
+      thì màn hình lớn tới 6,7 inch của iPhone 13 Pro Max cũng luôn cho trải
+      nghiệm tuyệt vời nhất.
+    </p>
+    <p class="thongtinchitiet">
+      Không chỉ lớn, đây còn là màn hình chất lượng hàng đầu thế giới smartphone
+      với tấm nền OLED tuyệt đẹp, công nghệ Super Retina XDR siêu nét và độ sáng
+      tối đa đạt mức khó tin, lên tới 1200 nits cho nội dung HDR. Trước mắt bạn
+      là một không gian giải trí mãn nhãn, một thiết bị di động lý tưởng để giải
+      quyết nhanh công việc với màn hình thực sự xuất sắc.
+    </p>
+  </div>
+</section>

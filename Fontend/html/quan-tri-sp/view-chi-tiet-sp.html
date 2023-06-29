@@ -1,0 +1,238 @@
+<div class="container backgroud">
+  <nav ng-include="'../../page/menu-quan-tri-sp.html'"></nav>
+  <h1 class="quanTriSP">Quản trị chi tiết sp</h1>
+  <div class="row">
+    <div class="col-md-6 form_Trai">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Sản phẩm:</label
+        >
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          ng-model="sanPham"
+        >
+          <option
+            ng-repeat="sp in lstSP"
+            ng-selected="sp.id == sanPham.id"
+            value="{{sp.id}}"
+          >
+            {{sp.ten}}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Dòng sp:</label
+        >
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          ng-model="dongSP"
+        >
+          <option
+            ng-repeat="dsp in lstDongSP"
+            ng-selected="dsp.id == dongSP.id"
+            value="{{dsp.id}}"
+          >
+            {{dsp.ten}}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Màu sắc:</label
+        >
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          ng-model="mauSac"
+        >
+          <option
+            ng-repeat="ms in lstMS"
+            ng-selected="ms.id == mauSac.id"
+            value="{{ms.id}}"
+          >
+            {{ms.ten}}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Năm sản xuất:</label
+        >
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          ng-model="namSX"
+        >
+          <option
+            ng-repeat="nsx in lstNSX"
+            ng-selected="nsx.id == namSX.id"
+            value="{{nsx.id}}"
+          >
+            {{nsx.ten}}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Năm bảo hành:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="namBH"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Số lượng tồn:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="soLuongTon"
+        />
+      </div>
+    </div>
+    <div style="padding: 50px" class="col-md-6">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Giá nhập:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="giaNhap"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Giá bán:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="giaBan"
+        />
+      </div>
+      <div class="input-group form-control-img" style="margin-top: 55px">
+        <input
+          type="file"
+          class="form-control"
+          id="inputGroupFile04"
+          aria-describedby="inputGroupFileAddon04"
+          aria-label="Upload"
+          select-ng-files
+          ng-model="fileArray"
+          multiple
+        />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="inputGroupFileAddon04"
+          ng-click="uploadAnh()"
+        >
+          Show Image
+        </button>
+      </div>
+      <div class="img_detail">
+        <img src="{{img}}" alt="" width="45%" />
+      </div>
+    </div>
+    <div class="them-sua-xoa">
+      <button
+        type="button"
+        class="btn btn-danger btn-them-sua-xoa them-trai"
+        ng-click="addNew()"
+      >
+        thêm
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger btn-them-sua-xoa"
+        ng-click="update()"
+      >
+        Sửa
+      </button>
+    </div>
+    <div class="row" style="padding: 50px">
+      <table class="table">
+        <tr style="font-size: 18px">
+          <td>Dòng sp</td>
+          <td>Sản phẩm</td>
+          <td>Màu sắc</td>
+          <td>Năm sx</td>
+          <td>Năm bh</td>
+          <td>Số lượng tồn</td>
+          <td>Giá nhập</td>
+          <td>Giá bán</td>
+          <td>Ảnh</td>
+          <td>Action</td>
+        </tr>
+        <tr ng-repeat="ctsp in lstCTSP" style="font-size: 18px">
+          <td>{{ctsp.dongSP.ten}}</td>
+          <td>{{ctsp.sanPham.ten}}</td>
+          <td>{{ctsp.mauSac.ten}}</td>
+          <td>{{ctsp.nsx.ten}}</td>
+          <td>{{ctsp.namBH}}</td>
+          <td>{{ctsp.soLuongTon}}</td>
+          <td>{{ctsp.giaNhap}}</td>
+          <td>{{ctsp.giaBan}}</td>
+          <td><img src="{{ctsp.anh}}" alt="" style="width: 50%" /></td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="detail(ctsp.id)"
+            >
+              Detail
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="remove(ctsp.id)"
+            >
+              xoá
+            </button>
+          </td>
+        </tr>
+      </table>
+      <!-- <div style="padding-left: 43%">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <button ng-click="phanTrang(0)">Đầu</button>
+            </li>
+            <li class="page-item">
+              <button ng-click="phanTrang(0)">></button>
+            </li>
+            <li class="page-item">
+              <button ng-click="phanTrang(0)"><</button>
+            </li>
+            <li class="page-item">
+              <button ng-click="phanTrang(1)">Cuối</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div> -->
+    <!-- <div class="row">
+      <div class="col-6 col-md-3" ng-repeat="ctsp in lstCTSP">
+        <div class="product">
+          <img src="{{ctsp.anh}}" alt="" class="img-pro" />
+          <h3 class="name-pro">
+            <a href="" ng-click="details(sp.id)">{{ctsp.sanPham.ten}}</a>
+          </h3>
+          <p class="price-pro">{{ctsp.giaBan}}đ </p>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>

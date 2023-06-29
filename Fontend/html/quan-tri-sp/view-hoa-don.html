@@ -1,0 +1,230 @@
+<div class="container backgroud">
+  <nav ng-include="'../../page/menu-quan-tri-sp.html'"></nav>
+  <h1 class="quanTriSP">Quản trị hoá đơn</h1>
+  <div class="row">
+    <div class="col-md-6 form_Trai">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Mã hoá đơn:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="maHD"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Mã khách hàng:</label
+        >
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          ng-model="khachHang"
+        >
+          <option ng-repeat="kh in lstKH" value="{{kh.id}}">{{kh.ma}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Mã nhân viên:</label
+        >
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          ng-model="nhanVien"
+        >
+          <option ng-repeat="nv in lstNV" value="{{nv.id}}">{{nv.ma}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Ngày thanh toán:</label
+        >
+        <input
+          type="date"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="ngayThanhToan"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Ngày ship:</label
+        >
+        <input
+          type="date"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="ngayShip"
+        />
+      </div>
+    </div>
+    <div class="col-md-6" style="padding: 50px">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Ngày nhận:</label
+        >
+        <input
+          type="date"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="ngayNhan"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Tên người nhận:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="tenNguoiNhan"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Sdt:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="sdt"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Địa chỉ:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="diaChi"
+        />
+      </div>
+      <div class="mb-3">
+        <div>
+          <label for="exampleFormControlInput1" class="form-label form-label2"
+            >Tình trạng:</label
+          >
+        </div>
+        <div>
+          <input
+            type="radio"
+            class=""
+            ng-model="tinhTrang"
+            value="0"
+            name="tinhTrang"
+          />
+          <label class="form-label form-label2" style="margin-right: 20px"
+            >Chưa thanh toán</label
+          >
+
+          <input
+            type="radio"
+            class=""
+            ng-model="tinhTrang"
+            value="1"
+            name="tinhTrang"
+          />
+          <label class="form-label form-label2" style="margin-right: 20px"
+            >Đang giao</label
+          >
+          <input
+            type="radio"
+            class=""
+            ng-model="tinhTrang"
+            value="2"
+            name="tinhTrang"
+          />
+          <label class="form-label form-label2">Đã hoàn thành</label>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="them-sua-xoa">
+        <button
+          type="button"
+          class="btn btn-danger btn-them-sua-xoa them-trai"
+          ng-click="addNew()"
+        >
+          thêm
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-them-sua-xoa"
+          ng-click="update()"
+        >
+          Sửa
+        </button>
+      </div>
+    </div>
+    <div style="margin-top: 20px">
+      <table class="table">
+        <tr>
+          <td>Mã</td>
+          <td>Tên nhân viên</td>
+          <td>Tên khách hàng</td>
+          <td>Ngày tạo</td>
+          <td>Ngày thanh toán</td>
+          <td>Ngày ship</td>
+          <td>Ngày nhận</td>
+          <td>Tên người nhận</td>
+          <td>Sdt</td>
+          <td>Địa chỉ</td>
+          <td>Tình trạng</td>
+          <td>Action</td>
+        </tr>
+        <tr ng-repeat="hd in lstHD">
+          <td>{{hd.ma}}</td>
+          <td>{{hd.nhanVien.ho}} {{hd.nhanVien.tenDem}} {{hd.nhanVien.ten}}</td>
+          <td>
+            {{hd.khachHang.ho}} {{hd.khachHang.tenDem}} {{hd.khachHang.ten}}
+          </td>
+          <td>{{hd.ngayTao}}</td>
+          <td>{{hd.ngayThanhToan}}</td>
+          <td>{{hd.ngayShip}}</td>
+          <td>{{hd.ngayNhan}}</td>
+          <td>{{hd.tenNguoiNhan}}</td>
+          <td>{{hd.sdt}}</td>
+          <td>{{hd.diaChi}}</td>
+          <td>
+            {{hd.tinhTrang==0?'Chưa thanh toán':hd.tinhTrang==1?'Đang giao':'Đã
+            hoàn thành'}}
+          </td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="detail(hd.id)"
+            >
+              Detail
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="remove(hd.id)"
+            >
+              xoá
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-3" ng-repeat="sp in lstProduct">
+        <div class="product">
+          <img src="{{sp.img}}" alt="" class="img-pro" />
+          <h3 class="name-pro">
+            <a href="" ng-click="details(sp.id)">{{sp.ten}}</a>
+          </h3>
+          <p class="price-pro">{{sp.giaBan}}đ <span>{{sp.giaGoc}}đ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

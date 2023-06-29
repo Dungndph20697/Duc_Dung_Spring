@@ -1,0 +1,76 @@
+<div class="container backgroud">
+  <nav ng-include="'../../page/menu-quan-tri-sp.html'"></nav>
+  <h1 class="quanTriSP">Quản trị năm sản xuất</h1>
+  <div class="row">
+    <div class="col-md-6 form_Trai">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Mã nsx:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="maNSX"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Tên nsx:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="tenNSX"
+        />
+      </div>
+
+      <div class="them-sua-xoa">
+        <button
+          type="button"
+          class="btn btn-danger btn-them-sua-xoa them-trai"
+          ng-click="addNew()"
+        >
+          thêm
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-them-sua-xoa"
+          ng-click="update()"
+        >
+          Sửa
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6 form_Phai">
+      <table class="table">
+        <tr>
+          <td>Mã</td>
+          <td>Tên</td>
+          <td>Action</td>
+        </tr>
+        <tr ng-repeat="nsx in lstNSX">
+          <td>{{nsx.ma}}</td>
+          <td>{{nsx.ten}}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="detail(nsx.id)"
+            >
+              Detail
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="remove(nsx.id)"
+            >
+              xoá
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

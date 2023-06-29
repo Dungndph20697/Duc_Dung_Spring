@@ -1,0 +1,88 @@
+<div class="container backgroud">
+  <nav ng-include="'../../page/menu-quan-tri-sp.html'"></nav>
+  <h1 class="quanTriSP">Quản trị sản phẩm</h1>
+  <div class="row">
+    <div class="col-md-6 form_Trai">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Mã sản phẩm:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="maSP"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label form-label2"
+          >Tên sản phẩm:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          ng-model="tenSP"
+        />
+      </div>
+
+      <div class="them-sua-xoa">
+        <button
+          type="button"
+          class="btn btn-danger btn-them-sua-xoa them-trai"
+          ng-click="addNew()"
+        >
+          thêm
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-them-sua-xoa"
+          ng-click="update()"
+        >
+          Sửa
+        </button>
+        
+      </div>
+    </div>
+    <div class="col-md-6 form_Phai">
+      <table class="table">
+        <tr>
+          <td>Mã</td>
+          <td>Tên</td>
+          <td>Action</td>
+        </tr>
+        <tr ng-repeat="sp in lstSP">
+          <td>{{sp.ma}}</td>
+          <td>{{sp.ten}}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="detail(sp.id)"
+            >
+              Detail
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              ng-click="remove(sp.id)"
+            >
+              xoá
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-3" ng-repeat="sp in lstProduct">
+        <div class="product">
+          <img src="{{sp.img}}" alt="" class="img-pro" />
+          <h3 class="name-pro">
+            <a href="" ng-click="details(sp.id)">{{sp.ten}}</a>
+          </h3>
+          <p class="price-pro">{{sp.giaBan}}đ <span>{{sp.giaGoc}}đ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

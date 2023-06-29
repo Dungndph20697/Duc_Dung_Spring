@@ -1,0 +1,36 @@
+<div class="container backgroud">
+  <nav ng-include="'../../page/menu-quan-tri-sp.html'"></nav>
+  <h1 class="quanTriSP">Quản trị giỏ hàng</h1>
+  <div style="padding: 0 10px">
+    <div
+      class="row"
+      ng-repeat="gh in lstGH"
+      style="width: 100%; margin-bottom: 10px"
+    >
+      <hr style="margin-left: 10px" />
+      <div class="col-md-4" style="font-size: 20px; font-weight: bold">
+        Mã giỏ hàng: {{gh.ma}}
+      </div>
+      <div class="col-md-4" style="font-size: 20px; font-weight: bold">
+        tình trạng: {{gh.tinhTrang==1?'Chờ xác nhận':''}}
+      </div>
+      <div class="col-md-4" style="text-align: right">
+        <button type="button" class="btn btn-success" ng-click="xacNhan(gh)">
+          Xác nhận
+        </button>
+      </div>
+      <hr style="margin-left: 10px; margin-top: 10px" />
+      <table class="table" style="margin-left: 10px">
+        <tr ng-repeat="ghct in lstGHCT">
+          <td>
+            <img src="{{ghct.chiTietSP.anh}}" alt="" style="width: 20%" />
+          </td>
+          <td>Tên sản phẩm: {{ghct.chiTietSP.sanPham.ten}}</td>
+          <td>Màu sắc: {{ghct.chiTietSP.mauSac.ten}}</td>
+          <td>Số lượng: {{ghct.soLuong}}</td>
+          <td>Đơn giá: {{ghct.donGia}}đ</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

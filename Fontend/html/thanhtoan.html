@@ -1,0 +1,94 @@
+<div class="container backgroud" style="padding: 10px 20px">
+  <!-- <h3 class="">Có 2 sản pham trong giỏ hàng</h3> -->
+
+  <table class="table">
+    <tr style="font-size: 18px">
+      <td style="font-size: 20px">Sản phẩm</td>
+      <td>Đơn giá</td>
+      <td>Số lượng</td>
+      <td>Thành tiền</td>
+    </tr>
+    <tr ng-repeat="ghct in lstGhct">
+      <td>
+        <img
+          src="{{ghct.chiTietSP.anh}}"
+          alt=""
+          style="width: 20%; float: left; margin-right: 30px"
+        />
+        <h4>{{ghct.chiTietSP.sanPham.ten}}</h4>
+        <p style="font-size: 18px">Màu sắc: {{ghct.chiTietSP.mauSac.ten}}</p>
+      </td>
+      <td>{{ghct.chiTietSP.giaBan}}đ</td>
+      <td>{{ghct.soLuong}}</td>
+      <td>{{ghct.donGia}}đ</td>
+    </tr>
+  </table>
+
+  <div class="">
+    <div class="row">
+      <div class="col-8">
+        <h4>Mã giảm giá</h4>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2 input-magiamgia"
+            type="search"
+            placeholder="Mã giảm giá"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Áp dụng</button>
+        </form>
+      </div>
+      <div class="col-4" style="margin-top: 15px">
+        <p class="tongtien">Tổng tiền:</p>
+        <p class="sotien">{{tongTien}}đ</p>
+        <p class="tongtien">Giảm:</p>
+        <p class="sotien">0đ</p>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 20px; margin-bottom: 10px">
+      <div class="col-md-4">
+        <label>Tên người nhận</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          ng-model="tenNguoiNhan"
+        />
+      </div>
+      <div class="col-md-4">
+        <label>Sdt</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          ng-model="sdt"
+        />
+      </div>
+      <div class="col-md-4">
+        <label>Địa chỉ</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          ng-model="diaChi"
+        />
+      </div>
+    </div>
+    <div class="row btn-thanhtoan" style="margin-left: 10px">
+      <div class="col-8"></div>
+      <div class="col-4">
+        <button
+          type="button"
+          class="btn btn-danger"
+          style="width: 410px; height: 80px; font-size: 30px"
+          ng-click="thanhToan()"
+        >
+          Thanh toán
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

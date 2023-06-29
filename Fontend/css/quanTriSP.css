@@ -1,0 +1,41 @@
+.quanTriSP {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+.form-label2 {
+  font-size: 20px;
+}
+.form_Trai {
+  padding: 50px;
+}
+.btn-info {
+  background-color: aqua;
+}
+.them-sua-xoa {
+  text-align: center;
+}
+.btn-them-sua-xoa {
+  width: 70px;
+  font-weight: bold;
+}
+.them-trai {
+  margin-right: 10px;
+}
+.xoa-phai {
+  margin-left: 10px;
+}
+.form_Phai {
+  padding: 50px;
+  padding-top: 88px;
+}
+.form-control-img {
+  margin-bottom: 20px;
+}
+.img_detail {
+  text-align: center;
+}
+
+.form_PhaiC {
+  padding: 50px;
+}

@@ -1,0 +1,195 @@
+.backgroud {
+  background: beige;
+  /* height: 500px; */
+  padding-bottom: 20px;
+}
+.header1 {
+  /* margin-top: -10px; */
+  position: relative;
+  background: red;
+  height: 70px;
+}
+.header1 img {
+  width: 200px;
+}
+.backgroud-header {
+  /* margin-bottom: -10px; */
+  background-color: red;
+  color: white;
+  height: 70px;
+}
+.backgroud-header ul li a {
+  font-size: 18px;
+}
+.form-search {
+  width: 500px;
+}
+.btn {
+  color: black;
+}
+.tenSP {
+  border-bottom: 1px solid black;
+  padding: 10px 0 10px 10px;
+  color: red;
+}
+.image-sp {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.image-sp img {
+  width: 60%;
+  margin-bottom: 20px;
+}
+.thongtin-sp {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  margin-left: 10px;
+}
+.right-tragop {
+  text-align: right;
+  margin-right: 10px;
+}
+.right-tragop span {
+  color: darkslategray;
+  font-weight: bold;
+}
+.right-gia {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  float: left;
+}
+.right-gia span {
+  text-decoration: line-through;
+  color: palevioletred;
+}
+.right-quatang {
+  margin-top: 70px;
+}
+.btn-primary {
+  height: 70px;
+  /* width: 306px; */
+  width: 98%;
+  margin-right: 10px;
+  border: 1px solid black;
+  background-color: red;
+  font-weight: bold;
+}
+.btn-primary:hover {
+  background-color: #b22222;
+}
+.btn-secondary {
+  height: 70px;
+  width: 98%;
+  margin-right: 10px;
+  border: 1px solid black;
+  background-color: #0664f9;
+  font-weight: bold;
+}
+.btn-secondary:hover {
+  background-color: #6a5acd;
+}
+.right-goiYsp {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.goiy1 img {
+  float: left;
+  margin-right: 10px;
+}
+.goiy1 p a {
+  text-decoration: none;
+}
+.goiy1 p a:hover {
+  text-decoration: underline;
+}
+.goiy1 p {
+  margin-top: -13px;
+  color: red;
+}
+.goiy1 p span {
+  text-decoration: line-through;
+  color: palevioletred;
+}
+
+.goiy2 {
+  margin-top: 40px;
+  clear: both;
+}
+.goiy2 img {
+  margin-right: 10px;
+  float: left;
+}
+.goiy2 p a {
+  text-decoration: none;
+}
+.goiy2 p a:hover {
+  text-decoration: underline;
+}
+.goiy2 p {
+  margin-top: -13px;
+  color: red;
+}
+.tenSP_danhGiaChiTiet {
+  text-align: center;
+}
+.font-thongtinchitiet {
+  margin: 0 10px 0 10px;
+  font-weight: bold;
+}
+.thongtinchitiet-img {
+  text-align: center;
+  margin-top: 20px;
+}
+.thongtinchitiet-img img {
+  /* width: 100px; */
+  /* width: 600px;
+  height: 300px; */
+  margin-bottom: 30px;
+}
+.thongtinchitiet {
+  margin: 5px 10px 0 10px;
+}
+.footer {
+  clear: both;
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  margin-bottom: 10px;
+}
+.footer-content {
+  text-align: left;
+}
+.footer-content li {
+  list-style: none;
+  text-align: left;
+}
+.footer-content li a {
+  text-decoration: none;
+  text-align: left;
+  font-size: 14px;
+}
+.aaa {
+  text-align: left;
+}
+
+.aaa p li {
+  text-align: left;
+}
+.aaa p li a {
+  text-align: left;
+}
+.footer-fontweight {
+  font-weight: bold;
+}
+.footer-fontweight1 {
+  font-weight: bold;
+  font-size: 24px;
+  color: red;
+}
+.item-img {
+  margin-top: 10px;
+}

@@ -1,0 +1,170 @@
+<div class="container backgroud">
+  <h1 class="quanTriSP">Đang giao</h1>
+  <div style="padding: 0 10px">
+    <div
+      class="row"
+      ng-repeat="gh in lstGH2"
+      style="width: 100%; margin-bottom: 10px"
+    >
+      <hr style="margin-left: 10px" />
+      <div
+        class="col-md-4"
+        style="font-size: 20px; font-weight: bold; padding-left: 20px"
+      >
+        Mã giỏ hàng: {{gh.ma}}
+      </div>
+      <div class="col-md-4" style="font-size: 20px; font-weight: bold">
+        tình trạng: {{gh.tinhTrang==1?'Chờ xác nhận':gh.tinhTrang==2?'Đang
+        giao':''}}
+      </div>
+      <div class="col-md-4" style="text-align: right">
+        <button
+          type="button"
+          class="btn btn-success"
+          ng-click="daNhanDuocHang(gh)"
+        >
+          Đã nhận được hàng
+        </button>
+      </div>
+      <hr style="margin-left: 10px; margin-top: 10px" />
+      <table class="table" style="margin-left: 10px; padding-left: 20px">
+        <tr ng-repeat="ghct in lstGHCT2">
+          <td style="width: 100px">
+            <img src="{{ghct.chiTietSP.anh}}" alt="" style="width: 100%" />
+          </td>
+          <td style="width: 387px; font-size: 18px">
+            Tên sản phẩm: {{ghct.chiTietSP.sanPham.ten}}
+          </td>
+          <td style="width: 217px; font-size: 18px">
+            Màu sắc: {{ghct.chiTietSP.mauSac.ten}}
+          </td>
+          <td style="width: 170px; font-size: 18px">
+            Số lượng: {{ghct.soLuong}}
+          </td>
+          <td style="font-size: 18px">Đơn giá: {{ghct.donGia}}đ</td>
+        </tr>
+      </table>
+    </div>
+    <h1 class="quanTriSP">Chờ xác nhận</h1>
+    <div style="padding: 0 10px">
+      <div
+        class="row"
+        ng-repeat="gh in lstGH1"
+        style="width: 100%; margin-bottom: 10px"
+      >
+        <hr />
+        <div
+          class="col-md-4"
+          style="font-size: 20px; font-weight: bold; padding-left: 20px"
+        >
+          Mã giỏ hàng: {{gh.ma}}
+        </div>
+        <div class="col-md-4" style="font-size: 20px; font-weight: bold">
+          tình trạng: {{gh.tinhTrang==1?'Chờ xác nhận':gh.tinhTrang==2?'Đang
+          giao':''}}
+        </div>
+        <div class="col-md-4" style="text-align: right">
+          <button
+            type="button"
+            class="btn btn-success"
+            ng-click="xacNhan(gh.id)"
+            style="margin-right: 20px"
+          >
+            Huỷ tất cả
+          </button>
+          <!-- <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            data-bs-whatever="@getbootstrap"
+          >
+            Open modal for @getbootstrap
+          </button>
+
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    New message
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <h2>aaaaaaaaaa</h2>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Send message
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <hr style="margin-top: 10px" />
+        <table class="table">
+          <tr ng-repeat="ghct in lstGHCT1" style="font-size: 18px">
+            <td style="width: 100px">
+              <img src="{{ghct.chiTietSP.anh}}" alt="" style="width: 100%" />
+            </td>
+            <td>Tên sản phẩm: {{ghct.chiTietSP.sanPham.ten}}</td>
+            <td>Màu sắc: {{ghct.chiTietSP.mauSac.ten}}</td>
+            <td>Số lượng: {{ghct.soLuong}}</td>
+            <td>Đơn giá: {{ghct.donGia}}đ</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-success"
+                ng-click="xacNhan(gh.id)"
+              >
+                Huỷ
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h1 class="quanTriSP">Lịch sử hàng đã mua</h1>
+      <table class="table" style="margin-left: -10px; margin-right: -10px">
+        <tr ng-repeat="sp in lstSP" style="font-size: 18px">
+          <td style="width: 100px">
+            <img src="{{sp.chiTietSP.anh}}" style="width: 100%" alt="" />
+          </td>
+          <td style="width: 387px; font-size: 18px">
+            Tên sản phẩm: {{sp.chiTietSP.sanPham.ten}}
+          </td>
+          <td>Màu sắc: {{sp.chiTietSP.mauSac.ten}}</td>
+          <td>Giá: {{sp.chiTietSP.giaBan}}đ</td>
+          <td style="text-align: right">
+            <button
+              type="button"
+              class="btn btn-success"
+              ng-click="xacNhan(gh.id)"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
